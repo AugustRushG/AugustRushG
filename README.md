@@ -1,8 +1,7 @@
 - 👋 Hi, I’m @AugustRushG
-- 👀 I’m interested in coding 
-- 🌱 I’m currently learning computer sciecne 
-- 💞️ I’m looking to collaborate on computer sciecne 
-- 📫 How to reach me by email xu2316430666@gmail.com
+- 👀 I’m interested in coding, computer vision in sports videos, in generic as well. Temporal action detection, Semi supervised learning
+- 💞️ I’m looking to collaborate on computer sciecne, AI, Computer Vision.
+- 📫 How to reach me by email august.xu@research.deakin.edu.au
 
 <!---
 AugustRushG/AugustRushG is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
