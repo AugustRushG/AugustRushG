@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @AugustRushG
-- 👀 I’m interested in coding, computer vision in sports videos, in generic as well. Temporal action detection, Semi supervised learning
-- 💞️ I’m looking to collaborate on computer sciecne, AI, Computer Vision.
+- 👀 I’m interested in coding, computer vision in sports videos, in generic as well.  My research areas include Temporal action detection, video-based semi-supervised learning, video object tracking, and detection.
+- 💞️ I’m looking to collaborate on computer science, AI, and Computer Vision.
 - 📫 How to reach me by email august.xu@research.deakin.edu.au
 
 <!---
