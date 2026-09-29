@@ -1,10 +1,1161 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Personal Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Hao (August) Xu | Video Understanding Researcher</title>
+
+  <meta
+    name="description"
+    content="Hao (August) Xu is a PhD researcher at Deakin University working on video understanding, multimodal learning, temporal modelling, video summarisation, and event detection."
+  />
+
+  <style>
+    :root {
+      --background: #fafafa;
+      --surface: #ffffff;
+      --text: #171717;
+      --muted: #666666;
+      --border: #e7e7e7;
+      --accent: #3157d5;
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: rgba(250, 250, 250, 0.9);
+      backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      min-height: 68px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      padding: 120px 0 110px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 18px;
+
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 5.7rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+
+      margin-bottom: 26px;
+    }
+
+    .hero-title {
+      font-size: clamp(1.25rem, 2vw, 1.65rem);
+      font-weight: 500;
+
+      margin-bottom: 24px;
+    }
+
+    .hero-description {
+      max-width: 680px;
+
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      margin-top: 34px;
+    }
+
+    .button {
+      padding: 11px 18px;
+      border-radius: 8px;
+
+      border: 1px solid var(--border);
+      background: var(--surface);
+
+      font-size: 0.92rem;
+      font-weight: 500;
+
+      transition:
+        transform 0.2s ease,
+        border 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: #bdbdbd;
+    }
+
+    .button.primary {
+      background: var(--text);
+      color: white;
+      border-color: var(--text);
+    }
+
+    .profile-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-image {
+      width: min(100%, 280px);
+      aspect-ratio: 1;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+      border: 1px solid var(--border);
+
+      background: #eee;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    section {
+      padding: 90px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+
+      margin-bottom: 55px;
+    }
+
+    .section-label {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.045em;
+
+      max-width: 700px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-content {
+      max-width: 760px;
+
+      margin-left: 250px;
+
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .about-content p + p {
+      margin-top: 18px;
+    }
+
+    /* =========================
+       RESEARCH
+    ========================= */
+
+    .research-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+    .research-card {
+      padding: 28px;
+
+      border: 1px solid var(--border);
+      background: var(--surface);
+
+      border-radius: 12px;
+
+      transition:
+        transform 0.2s ease,
+        border 0.2s ease;
+    }
+
+    .research-card:hover {
+      transform: translateY(-4px);
+      border-color: #c8c8c8;
+    }
+
+    .research-number {
+      color: var(--muted);
+      font-size: 0.8rem;
+
+      margin-bottom: 55px;
+    }
+
+    .research-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+
+    .research-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* =========================
+       PUBLICATIONS
+    ========================= */
+
+    .publication {
+      display: grid;
+
+      grid-template-columns: 100px 1fr auto;
+      gap: 30px;
+
+      align-items: start;
+
+      padding: 26px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .publication:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .year {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .publication h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+
+      margin-bottom: 7px;
+    }
+
+    .authors,
+    .venue {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .venue {
+      margin-top: 4px;
+    }
+
+    .publication-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .publication-links a {
+      font-size: 0.85rem;
+
+      padding: 6px 10px;
+
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================= */
+
+    .experience-item {
+      display: grid;
+
+      grid-template-columns: 250px 1fr;
+
+      padding: 30px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .experience-item:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .experience-date {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .experience-content h3 {
+      font-size: 1.15rem;
+    }
+
+    .experience-role {
+      color: var(--muted);
+      margin: 3px 0 12px;
+    }
+
+    .experience-description {
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      padding-bottom: 120px;
+    }
+
+    .contact-text {
+      max-width: 650px;
+
+      font-size: 1.25rem;
+      color: var(--muted);
+
+      margin-bottom: 28px;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .social-links a {
+      border-bottom: 1px solid var(--text);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 28px 0;
+
+      border-top: 1px solid var(--border);
+
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 850px) {
+      .hero {
+        padding: 80px 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .profile-wrapper {
+        justify-content: flex-start;
+      }
+
+      .profile-image {
+        width: 180px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .section-header {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .about-content {
+        margin-left: 0;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .publication {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .publication-links {
+        margin-top: 5px;
+      }
+
+      .experience-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Hello, World!</h1>
-    <p>Welcome to my personal page hosted on GitHub Pages.</p>
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
+  <nav>
+    <div class="container nav-container">
+
+      <a href="#" class="logo">
+        Hao Xu
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
+
+    <div class="hero">
+      <div class="container hero-grid">
+
+        <div>
+
+          <div class="eyebrow">
+            Video Understanding · Multimodal Learning
+          </div>
+
+          <h1>
+            Hao<br />
+            (August) Xu
+          </h1>
+
+          <div class="hero-title">
+            PhD Researcher in Video Understanding & Multimodal Learning
+          </div>
+
+          <p class="hero-description">
+            I develop machine learning methods for understanding long-form video, with a focus on multimodal learning, temporal modelling, 
+            video summarisation, event detection, object tracking, and self- and semi-supervised learning.
+          </p>
+
+          <div class="hero-links">
+
+            <a class="button primary" href="#research">
+              View Research
+            </a>
+
+            <!-- Change this to your CV file -->
+            <a
+              class="button"
+              href="assets/Hao_Xu_CV.pdf"
+              target="_blank"
+            >
+              CV
+            </a>
+
+            <!-- Replace these URLs -->
+
+            <a
+              class="button"
+              href="https://github.com/AugustRushG"
+              target="_blank"
+            >
+              GitHub
+            </a>
+
+            <a
+              class="button"
+              href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=KW7koRoAAAAJ&inst=7790070097503134188"
+              target="_blank"
+            >
+              Google Scholar
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="profile-wrapper">
+
+          <!--
+            Add your photo to:
+
+            assets/profile.jpg
+          -->
+
+          <img
+            src="assets/profile.jpg"
+            alt="Hao Xu"
+            class="profile-image"
+          />
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            About
+          </div>
+
+          <h2 class="section-title">
+            Understanding complex events in long-form video.
+          </h2>
+
+        </div>
+
+
+        <div class="about-content">
+
+          <p>
+           I am a PhD candidate at Deakin University, supervised by Associate Professor Sunil Aryal. 
+           My research lies at the intersection of computer vision and multimodal machine learning, with a particular focus on video understanding. 
+           I develop models that identify and localise important events in long-form video, 
+           while exploring how visual, audio, and language information can be effectively combined to support richer temporal understanding.
+          </p>
+
+          <p>
+            My broader interests include video-language models, temporal
+            localisation, video summarisation, multimodal reasoning, event
+            detection, and efficient learning from limited annotations.
+          </p>
+
+          <p>
+            I have also worked with industry research teams, including Dolby
+            Laboratories, on multimodal video understanding and automated
+            highlight detection.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         RESEARCH
+    ========================== -->
+
+    <section id="research">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Research
+          </div>
+
+          <h2 class="section-title">
+            Research interests
+          </h2>
+
+        </div>
+
+
+        <div class="research-grid">
+
+          <div class="research-card">
+
+            <div class="research-number">
+              01
+            </div>
+
+            <h3>
+              Vision-Language Models
+            </h3>
+
+            <p>
+              Exploring vision-language models for long-form video understanding,
+              with a focus on efficient frame selection, temporal reasoning,
+              and grounding language queries in video.
+            </p>
+
+          </div>
+
+          <div class="research-card">
+
+            <div class="research-number">
+              02
+            </div>
+
+            <h3>
+              Multimodal Video Understanding
+            </h3>
+
+            <p>
+              Learning representations from visual, audio, and language
+              signals to better understand complex temporal events in video.
+            </p>
+
+          </div>
+
+
+          <div class="research-card">
+
+            <div class="research-number">
+              03
+            </div>
+
+            <h3>
+              Video Summarisation
+            </h3>
+
+            <p>
+              Identifying informative and important moments from long-form
+              videos using multimodal and context-aware models.
+            </p>
+
+          </div>
+
+
+          <div class="research-card">
+
+            <div class="research-number">
+              04
+            </div>
+
+            <h3>
+              Self- & Semi-Supervised Learning
+            </h3>
+
+            <p>
+              Developing learning strategies that leverage limited labelled data and
+              large-scale unlabelled video to learn robust and generalisable representations.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PUBLICATIONS
+    ========================== -->
+
+    <section id="publications">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Publications
+          </div>
+
+          <h2 class="section-title">
+            Selected research
+          </h2>
+
+        </div>
+
+
+        <!-- PUBLICATION -->
+
+        <div class="publication">
+
+          <div class="year">
+            2026
+          </div>
+
+          <div>
+
+            <h3>
+              Temporal Feature Distillation for Label-Efficient
+              Precise Event Spotting
+            </h3>
+
+            <div class="authors">
+              Hao Xu et al.
+            </div>
+
+            <div class="venue">
+              ACM Multimedia (ACM MM) · 2026 
+            </div>
+
+          </div>
+
+          <div class="publication-links">
+
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KW7koRoAAAAJ&citation_for_view=KW7koRoAAAAJ%3A2osOgNQ5qMEC&inst=7790070097503134188" target="_blank">
+              Paper
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+        <!-- PUBLICATION -->
+
+        <div class="publication">
+
+          <div class="year">
+            2026
+          </div>
+
+          <div>
+
+            <h3>
+              Multi-Focus Temporal Shifting for Precise Event Spotting in Sports Videos
+            </h3>
+
+            <div class="authors">
+              Hao Xu et al.
+            </div>
+
+            <div class="venue">
+              IEEE International Conference on Multimedia and Expo (ICME) · 2026 
+            </div>
+
+          </div>
+
+          <div class="publication-links">
+
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KW7koRoAAAAJ&citation_for_view=KW7koRoAAAAJ%3Au-x6o8ySG0sC&inst=7790070097503134188" target="_blank">
+              Paper
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+        <!-- PUBLICATION -->
+
+        <div class="publication">
+
+          <div class="year">
+            2026
+          </div>
+
+          <div>
+
+            <h3>
+              Audio for Sports Highlight Detection:
+              A Comparative Empirical Study
+            </h3>
+
+            <div class="authors">
+              Hao Xu et al.
+            </div>
+
+            <div class="venue">
+              MMSports @ ACM Multimedia 2026
+            </div>
+
+          </div>
+
+          <div class="publication-links">
+
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KW7koRoAAAAJ&citation_for_view=KW7koRoAAAAJ:qjMakFHDy7sC" target="_blank">
+              Paper
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- PUBLICATION -->
+
+        <div class="publication">
+
+          <div class="year">
+            2026
+          </div>
+
+          <div>
+
+            <h3>
+              TOTNet: Occlusion-Aware Temporal Tracking for Robust Ball Detection in Sports Videos 
+            </h3>
+
+            <div class="authors">
+              Hao Xu et al.
+            </div>
+
+            <div class="venue">
+              Computer Vision and Image Understanding (CVIU) · 2026 
+            </div>
+
+          </div>
+
+          <div class="publication-links">
+
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=KW7koRoAAAAJ&citation_for_view=KW7koRoAAAAJ:d1gkVwhDpl0C" target="_blank">
+              Paper
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Add your CVIU / ICME papers here -->
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPERIENCE
+    ========================== -->
+
+    <section id="experience">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Experience
+          </div>
+
+          <h2 class="section-title">
+            Research & industry
+          </h2>
+
+        </div>
+
+
+        <div class="experience-item">
+
+          <div class="experience-date">
+            2026
+          </div>
+
+          <div class="experience-content">
+
+            <h3>
+              Dolby Laboratories
+            </h3>
+
+            <div class="experience-role">
+              Research Intern · Sydney, Australia
+            </div>
+
+            <p class="experience-description">
+              Researched multimodal video understanding and automated
+              highlight detection for long-form video using visual,
+              audio, and language representations.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+          <div class="experience-date">
+            Present
+          </div>
+
+          <div class="experience-content">
+
+            <h3>
+              Deakin University
+            </h3>
+
+            <div class="experience-role">
+              PhD Candidate
+            </div>
+
+            <p class="experience-description">
+              Researching video understanding, multimodal learning,
+              temporal modelling, video summarisation, and event detection.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+          <div class="experience-date">
+            Jul – Oct 2023
+          </div>
+
+          <div class="experience-content">
+
+            <h3>
+              Agriculture Victoria
+            </h3>
+
+            <div class="experience-role">
+              R&D Engineer Intern
+            </div>
+
+            <p class="experience-description">
+              Developed research software and web-based tools supporting
+              agricultural R&D workflows.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+          <div class="experience-date">
+            Dec 2022 – Feb 2023
+          </div>
+
+          <div class="experience-content">
+
+            <h3>
+              NIO
+            </h3>
+
+            <div class="experience-role">
+              Software Engineer Intern
+            </div>
+
+            <p class="experience-description">
+              Worked on software testing and engineering infrastructure
+              using Python and automated testing tools.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact" class="contact">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Contact
+          </div>
+
+          <h2 class="section-title">
+            Let's connect.
+          </h2>
+
+        </div>
+
+
+        <p class="contact-text">
+          I am interested in research collaborations and opportunities
+          in video understanding, computer vision, and multimodal machine
+          learning.
+        </p>
+
+
+        <div class="social-links">
+
+          <!-- Replace with your email -->
+
+          <a href="mailto:august.xu@research.deakin.edu.au">
+            Email
+          </a>
+
+
+          <a
+            href="https://www.linkedin.com/in/augustxu123/"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+
+
+          <a
+            href="https://github.com/AugustRushG"
+            target="_blank"
+          >
+            GitHub
+          </a>
+
+
+          <a
+            href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=KW7koRoAAAAJ"
+            target="_blank"
+          >
+            Google Scholar
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container footer-content">
+
+      <span>
+        © 2026 Hao Xu
+      </span>
+
+      <span>
+        Built by Hao Xu
+      </span>
+
+    </div>
+
+  </footer>
+
 </body>
 </html>
